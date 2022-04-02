@@ -3,7 +3,7 @@
 >   [List of commands](commands.md)
 
 >   ## Demo 
->   [Working Demo](https://drowlex.github.io/corus-restaurant/docs/#/login)
+>   [Working Demo](https://drowlex.github.io/restaurant/)
 >   ## Mockups
 >   ### Login
 >   ![Login](mockups/Login.png)
