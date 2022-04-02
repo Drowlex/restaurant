@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <div class="row mb-2">
+                    <div class="col-sm-4">
+                        <div class="mb-2 d-inline-block">
+                            <div class="position-relative">
+                                <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="term" />
+                                <!--<i class="bx bx-search-alt search-icon"></i>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="table-responsive">
+                    <table class="table align-middle table-nowrap table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Detalles</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="listItems$ | async as items">
+                            <!-- <tr *ngFor="let user of items | filter: term | slice:0:2; let i=index"> -->
+                            <tr *ngFor="let item of items?.meals | filter: term; let i=index">
+                               
+                                <td>{{ item.idIngredient }}</td>
+                                <td>{{ item.strIngredient }}</td>
+                                <td>
+                                    <button mat-icon-button [color]="'primary'" (click)="details(item)">
+                                        <mat-icon>visibility</mat-icon>
+                                    </button>
+                                </td>
+                               
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div *ngIf="!(listItems$ | async) as items" class="row">
+                    <div class="col-12">
+                        <div class="text-center my-3">
+                            <a href="javascript:void(0);" class="text-success">
+                                <i class="bx bx-loader bx-spin font-size-18 align-middle mr-2"></i> Cargando información
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+</div>

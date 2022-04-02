@@ -1,0 +1,45 @@
+<ng-template #MenuOfDayTemplate>
+    <div class="row">
+        <div style="text-align: center;">
+            <mat-spinner *ngIf="!(item$ | async) as items" style="margin:0 auto;" [color]="'accent'"></mat-spinner>
+        </div>
+        <div *ngIf="item$ | async as items">
+            <div *ngIf="!items?.meals"><h2>No hay platillos asociados</h2></div>
+            <div *ngFor="let item of items?.meals">
+                <div class="row">
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    #{{ item?.idMeal }} - {{ item?.strMeal }}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p style="text-align: justify;">{{ item?.strInstructions }}</p>
+                            <div style="text-align: center;">
+                                <img src="{{ item?.strMealThumb }}" alt="viewSelection" draggable="false" width="800px" height="550px">
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ul ngbNav #nav="ngbNav" [activeId]="1" class="nav-tabs justify-content-center nav-tabs-custom">
+    <li [ngbNavItem]="1" class="me-auto">
+        <a ngbNavLink>
+            <i class="material-icons">restaurant</i> &nbsp;
+            Lista de ingredientes
+        </a>
+        <ng-template ngbNavContent>
+          <ng-container [ngTemplateOutlet]="MenuOfDayTemplate"></ng-container>
+        </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+        <a ngbNavLink [routerLink]="['/home']" href="javascript: void(0);">Volver al inicio</a>
+    </li>
+</ul>
+  
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

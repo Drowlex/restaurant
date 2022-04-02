@@ -1,0 +1,49 @@
+<ng-template #MenuOfDayTemplate>
+    <div class="row p-4">
+        <form>
+            <div class="col-6">
+                <div class="form-group row m-2">
+                  <label for="name" class="col-sm-2 col-form-label">Nombre</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" value="{{user?.name}}">
+                  </div>
+                </div>
+                <div class="form-group row m-2">
+                  <label for="lastname" class="col-sm-2 col-form-label">Apellido</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="lastname" value="{{user?.lastname}}">
+                  </div>
+                </div>
+                <div class="form-group row m-2">
+                  <label for="username" readonly class="col-sm-2 col-form-label">Usuario</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="username" value="{{user?.username}}">
+                  </div>
+                </div>
+                <div class="form-group row m-2">
+                  <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" placeholder="{{user?.password}}">
+                  </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+<ul ngbNav #nav="ngbNav" [activeId]="1" class="nav-tabs justify-content-center nav-tabs-custom">
+    <li [ngbNavItem]="1" class="me-auto">
+        <a ngbNavLink>
+            <i class="material-icons">restaurant</i> &nbsp;
+            Perfil de usuario
+        </a>
+        <ng-template ngbNavContent>
+          <ng-container [ngTemplateOutlet]="MenuOfDayTemplate"></ng-container>
+        </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+        <a ngbNavLink [routerLink]="['/home']" href="javascript: void(0);">Volver al inicio</a>
+    </li>
+</ul>
+  
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

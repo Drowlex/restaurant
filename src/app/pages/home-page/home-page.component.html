@@ -1,0 +1,36 @@
+<ul ngbNav #nav="ngbNav" [activeId]="1" class="nav-tabs justify-content-center nav-tabs-custom">
+    <li [ngbNavItem]="1" class="me-auto">
+        <a ngbNavLink>
+            <i class="material-icons">restaurant</i> &nbsp;
+            RESTAURANTE
+        </a>
+        <ng-template ngbNavContent>
+            <app-dashboard-page></app-dashboard-page>
+        </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+        <a ngbNavLink>Ingredientes populares</a>
+        <ng-template ngbNavContent>
+            <app-ingredient-page></app-ingredient-page>
+        </ng-template>
+    </li>
+    <li [ngbNavItem]="3">
+        <a ngbNavLink>Platillos</a>
+        <ng-template ngbNavContent>
+            <app-menu-page></app-menu-page>
+        </ng-template>
+    </li>
+    <!-- <li ngbDropdown class="nav-item" class="ms-auto"> -->
+    <li ngbDropdown class="nav-item">
+        <a href (click)="false" class="nav-link" ngbDropdownToggle>
+            <i class="material-icons">person</i> &nbsp;
+        </a>
+        <div ngbDropdownMenu>
+            <button ngbDropdownItem (click)="profile()">Perfil del usuario</button>
+            <div class="dropdown-divider"></div>
+            <button ngbDropdownItem (click)="logout()">Cerrar sesión</button>
+        </div>
+    </li>
+  </ul>
+  
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>

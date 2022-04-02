@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import '~material-design-icons/iconfont/material-icons.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$primary-light : #046ca0a2;
+$primary : #556ee6;
+// $primary-dark : #071764;
+
+.nav-tabs-custom {
+    background-color: $primary-light;
+    // border-bottom: 2px solid $gray-300;
+    .nav-item {
+      position: relative;
+    //   color: $dark;
+    .nav-link {
+        border: none;
+        color: white;
+        &::after {
+          content: "";
+          background: $primary;
+          height: 2px;
+          position: absolute;
+          width: 100%;
+          left: 0;
+          bottom: -1px;
+          transition: all 250ms ease 0s;
+          transform: scale(0);
+        }
+  
+        &.active{
+            background-color: $primary-light;  
+            color: white;
+            font-weight: bold;
+            &:after{
+                transform: scale(1);
+            }
+        }
+  
+      }
+    }
+}

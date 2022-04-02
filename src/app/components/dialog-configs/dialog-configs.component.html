@@ -1,0 +1,35 @@
+<!-- Modal of add of user -->
+<ng-template #RandomPlatilloTemplate>
+    <div class="row">
+      <h3 style="text-align: center; font-weight: bold;">{{data.args?.meals[0].strCategory}}</h3>
+      <hr>
+      <li class="p-4">{{data.args?.meals[0].strMeal}}</li>
+    </div>
+</ng-template>
+  
+  
+<h2 mat-dialog-title>{{ titleModal }}</h2>
+    
+<!-- 🐖 Empieza la "Pansita" del modal 🐖 -->
+<div mat-dialog-content>
+    
+    <div class="container">
+      <div [ngSwitch]="data.option">
+        <!-- USUARIOS -->
+        <div *ngSwitchCase="'platillo-random'">
+          <ng-container [ngTemplateOutlet]="RandomPlatilloTemplate"></ng-container>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- 🐖 Termine la "Pansita" del modal 🐖 -->
+<div mat-dialog-actions align="center">
+
+  <button mat-button (click)="close(false)">
+    Cerrar
+  </button>
+  <button mat-raised-button color="{{button_color}}" (click)="confirm()">
+    {{ titleConfirm }}
+  </button>
+</div>

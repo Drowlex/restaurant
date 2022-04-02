@@ -1,0 +1,30 @@
+<div class="container-fluid">    
+    <h2>Hola de nuevo {{ user?.name  }} {{user?.lastname}}!!!</h2>
+    <!-- <div style="text-align: center; max-width: 100%;">
+        <img src="./assets/restaurante.jpg" alt="viewSelection" draggable="false" width="900px">
+    </div> -->
+
+    <!-- Carrusel -->
+
+    <div class="row m-2">
+        <div style="text-align: center;">
+            <mat-spinner *ngIf="loading" style="margin:0 auto;" [color]="'accent'"></mat-spinner>
+        </div>
+
+        <ngb-carousel *ngIf="items_carrusel" style="text-align: center;">
+            <ng-template ngbSlide *ngFor="let item of items_carrusel">
+              <div class="picsum-img-wrapper">
+                <a [routerLink]="['/detail_menu/2/', item.id]" target="_blank" rel="nofollow noopener noreferrer">
+                    <img [src]="item.image" alt="Random first slide">
+                </a>
+              </div>
+              <div class="carousel-caption">
+                <h3>{{ item?.category }}</h3>
+                <p>{{ item?.meal }}</p>
+              </div>
+            </ng-template>
+        </ngb-carousel>
+
+    </div>
+
+</div>
