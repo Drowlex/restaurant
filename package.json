@@ -6,11 +6,10 @@
     "start": "ng serve",
     "start:dev": "ng serve --live-reload true --port 4200 --host 0.0.0.0",
     "build": "ng build",
-    "build:docs": "ng build --base-href=/corus-restaurant/docs/",
     "watch": "ng build --watch --configuration development",
     "play": "http-server dist/centinela/ -p 4200",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=/corus-restaurant/docs/"
+    "deploy": "ng deploy --base-href=/restaurant/"
   },
   "private": true,
   "dependencies": {
