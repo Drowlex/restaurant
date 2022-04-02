@@ -23,4 +23,10 @@ export class AuthService {
   logout() {
     localStorage.removeItem('currentUser')
   }
+  getAllUser(): Observable<Array<User>> {
+    return this.authDataService.getAll();
+  }
+  change(id: number, item: any): Observable<boolean> {
+    return this.authDataService.change(id, item);
+  }
 }

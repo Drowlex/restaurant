@@ -1,7 +1,4 @@
-> # Restaurante - Angular 13 - Corus 
->   ## Commands
->   [List of commands](commands.md)
-
+> # Restaurante - Angular 13
 >   ## Demo 
 >   [Working Demo](https://drowlex.github.io/restaurant/)
 >   ## Mockups
@@ -19,14 +16,10 @@
 >   ![detalle_platillo](mockups/detalle_platillo.png)
 >   ## Test developer 
 >       * npm run start:dev
->   ## Compile 
->       * npm run build
->   ## Deployement with github pages 
->       * npm run deploy
 >   ## Extras 
->   * [Deploy app in github pages](https://www.youtube.com/watch?v=wL8gCda3pG4)
->   * [Deploy app of angular in github pages](https://dev.to/gedgonz/haciendo-deploy-de-una-app-en-angular-a-githubpages-4bll)
->   ## Developers 👨‍💻🔥 
+>   * ### Commands
+>     * [List of commands](commands.md)
+>   ## Developer 👨‍💻🔥 
 >   * **Luis Ortiz @Drowlex** - *Development and Documentation* - [Drowlex](https://github.com/Drowlex)
 >
 >   🎉👨‍💻 _¡Sin miedo al éxito!_ 👨‍💻🎉    

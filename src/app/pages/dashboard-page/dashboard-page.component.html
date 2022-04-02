@@ -1,4 +1,5 @@
-<div class="container-fluid">    
+<div class="container-fluid">
+
     <h2>Hola de nuevo {{ user?.name  }} {{user?.lastname}}!!!</h2>
     <!-- <div style="text-align: center; max-width: 100%;">
         <img src="./assets/restaurante.jpg" alt="viewSelection" draggable="false" width="900px">
@@ -12,7 +13,7 @@
         </div>
 
         <ngb-carousel *ngIf="items_carrusel" style="text-align: center;">
-            <ng-template ngbSlide *ngFor="let item of items_carrusel">
+            <ng-template ngbSlide *ngFor="let item of items_carrusel" class="imageCarousel">
               <div class="picsum-img-wrapper">
                 <a [routerLink]="['/detail_menu/2/', item.id]" target="_blank" rel="nofollow noopener noreferrer">
                     <img [src]="item.image" alt="Random first slide">

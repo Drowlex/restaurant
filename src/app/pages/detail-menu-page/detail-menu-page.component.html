@@ -5,27 +5,36 @@
         </div>
         <div *ngIf="item$ | async as items">
             <div *ngFor="let item of items?.meals">
+
                 <div class="row">
                     <h2 *ngIf="tipo == 1">El platillo del día es:</h2>
                     <hr *ngIf="tipo == 1">    
-                    <div style="text-align: center;">
-                        <h3 style="font-weight: bold;"> {{ item?.strCategory }} > {{ item?.strMeal }} </h3>
-                        <img src="{{ item?.strMealThumb }}" alt="viewSelection" draggable="false" width="800px" height="550px">
+
+                    <div class="row p-4">
+                        <div style="text-align: center;">
+                            <youtube-player 
+                                videoId="{{getUUIDYoutube(item?.strYoutube)}}" 
+                                suggestedQuality="highres"
+                                [height]="450" 
+                                [width]="800" 
+                                [startSeconds]="4"
+                                [endSeconds]="8">
+                            </youtube-player>
+                        </div>
                     </div>
-                </div>
-                <div class="row m-2">
-                    <h3>Acerca de...</h3>
-                    <hr>
-                    <p class="p-4" style="background-color: rgb(246, 246, 246); text-align: justify;">{{ item?.strInstructions }}</p>
-                    <div style="text-align: center;">
-                        <youtube-player 
-                            videoId="{{getUUIDYoutube(item?.strYoutube)}}" 
-                            suggestedQuality="highres"
-                            [height]="250" 
-                            [width]="500" 
-                            [startSeconds]="4"
-                            [endSeconds]="8">
-                        </youtube-player>
+    
+                    <div class="row p-4" style="background-color: rgb(246, 246, 246);">
+                        <div class="row">
+                            <h3 style="font-weight: bold;"> {{ item?.strCategory }} > {{ item?.strMeal }} </h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-9" style="text-align: justify;">
+                                <p>{{ item?.strInstructions }}</p>
+                            </div>
+                            <div class="col-3">
+                                <img src="{{ item?.strMealThumb }}" alt="viewSelection" draggable="false">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

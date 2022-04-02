@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { RestaurantService } from 'src/app/services/restaurant.service';
@@ -6,12 +6,14 @@ import { RestaurantService } from 'src/app/services/restaurant.service';
 @Component({
   selector: 'app-detail-menu-page',
   templateUrl: './detail-menu-page.component.html',
-  styleUrls: ['./detail-menu-page.component.scss']
+  styleUrls: ['./detail-menu-page.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class DetailMenuPageComponent implements OnInit {
   item$  : Observable<any> = of();
   tipo   : number = 1;
   menu_id: number = 0;
+
 
   constructor(
     private route: ActivatedRoute,

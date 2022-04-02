@@ -16,7 +16,6 @@ import { finalize } from 'rxjs/operators';
  * Login component
  */
 export class LoginPageComponent implements OnInit {
-
 	session     : boolean  = false;
 	see_pass    : boolean  = false;
 
